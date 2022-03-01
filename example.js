@@ -2,7 +2,7 @@
  * @Date: 2022-03-01 17:01:38
  * @LastEditors: jimouspeng
  * @Description: 描述文件内容
- * @LastEditTime: 2022-03-01 17:25:57
+ * @LastEditTime: 2022-03-01 17:37:27
  * @FilePath: \virtual_dom\example.js
  */
 import { init, classModule, propsModule, styleModule, eventListenersModule, h } from 'snabbdom'
@@ -29,7 +29,7 @@ const vnode = h(
     [
         h('span', { style: { fontWeight: 'bold' } }, 'This is bold'),
         ' and this is just normal text',
-        h('a', { props: { href: '/foo' } }, "I'll take you places!"),
+        h('p', { props: { href: '/foo' } }, "I'll take you places!"),
     ]
 )
 // Patch into empty DOM element – this modifies the DOM as a side effect
@@ -47,8 +47,10 @@ const newVnode = h(
     [
         h('span', { style: { fontWeight: 'normal', fontStyle: 'italic' } }, 'This is now italic type'),
         ' and this is still just normal text',
-        h('a', { props: { href: '/bar' } }, "I'll take you places!"),
+        h('p', { props: { href: '/bar' } }, "I'll take you places!"),
     ]
 )
 // Second `patch` invocation
-patch(vnode, newVnode) // Snabbdom efficiently updates the old view to the new state
+setTimeout(() => {
+    patch(vnode, newVnode) // Snabbdom efficiently updates the old view to the new state
+}, 5000)
