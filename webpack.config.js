@@ -2,7 +2,7 @@
  * @Date: 2022-03-01 17:05:12
  * @LastEditors: jimouspeng
  * @Description: 描述文件内容
- * @LastEditTime: 2022-03-01 17:38:37
+ * @LastEditTime: 2022-03-02 10:53:17
  * @FilePath: \virtual_dom\webpack.config.js
  */
 
@@ -28,4 +28,5 @@ module.exports = {
         open: true,
         hot: true, // 开启模块热替换
     },
+    devtool: 'source-map',
 }
